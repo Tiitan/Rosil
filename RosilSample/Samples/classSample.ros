@@ -1,0 +1,60 @@
+enum CardinalDirection:
+    None
+    North
+    South
+    East
+    West
+
+class DirClass:
+    // Private fields
+    CardinalDirection _direction
+    float _speed
+    static const Dict[CardinalDirection, float] _dirToSpeed =
+        None: 0
+        North: 1.2
+        South: 1.5
+        East: -0.5
+        West: 5
+
+    
+    // Public properties
+    public CardinalDirection direction:
+        get: _direction
+        set value:
+            if value != _direction
+                _direction = value
+                OnUpdate()
+    
+    public float speed:
+        get: _speed
+    
+    // Private methods
+    OnUpdate()
+        _speed = _dirToSpeed[_direction]
+        
+    // Public methods
+    public Init(CardinalDirection initialDirection)
+        direction = initialDirection
+        
+    public string ToString()
+        return "Direction: {direction}, Speed: {speed}"
+
+class EastChild(DirClass):
+    public Init()
+        Super(CardinalDirection.East)
+        
+    public string ToString()
+        return "EastChild: ({Super.ToString()})"
+
+main():
+    DirClass instance = DirClass(CardinalDirection.North)
+    Print(instance.ToString())
+    instance.direction = CardinalDirection.West
+    Print(instance.ToString())
+    EastChild instance_2 = EastChild()
+    Print(instance_2.ToString())
+
+// output:
+// Direction: North, Speed: 1.2
+// Direction: West, Speed: 5
+// EastChild: (Direction: East, Speed: -0.5)

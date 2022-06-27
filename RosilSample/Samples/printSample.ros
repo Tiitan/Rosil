@@ -1,0 +1,14 @@
+bool CountDown(int x):
+    while x > 0:
+        Print("{--x}")
+    return true
+
+main():
+    Print("Hello world!")
+    bool x = CountDown(3)
+
+// output:
+// Hello world!
+// 2
+// 1
+// 0
