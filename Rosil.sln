@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RosilSample", "RosilSample\RosilSample.vcxproj", "{17E368D9-4517-4562-95E6-2BF9C9F2356E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RosilCore", "RosilCore\RosilCore.vcxproj", "{CF53752A-6806-4B56-BFD2-9638056734E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17E368D9-4517-4562-95E6-2BF9C9F2356E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{17E368D9-4517-4562-95E6-2BF9C9F2356E}.Debug|Win32.Build.0 = Debug|Win32
+		{17E368D9-4517-4562-95E6-2BF9C9F2356E}.Debug|x64.ActiveCfg = Debug|x64
+		{17E368D9-4517-4562-95E6-2BF9C9F2356E}.Debug|x64.Build.0 = Debug|x64
+		{17E368D9-4517-4562-95E6-2BF9C9F2356E}.Release|Win32.ActiveCfg = Release|Win32
+		{17E368D9-4517-4562-95E6-2BF9C9F2356E}.Release|Win32.Build.0 = Release|Win32
+		{17E368D9-4517-4562-95E6-2BF9C9F2356E}.Release|x64.ActiveCfg = Release|x64
+		{17E368D9-4517-4562-95E6-2BF9C9F2356E}.Release|x64.Build.0 = Release|x64
+		{CF53752A-6806-4B56-BFD2-9638056734E8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CF53752A-6806-4B56-BFD2-9638056734E8}.Debug|Win32.Build.0 = Debug|Win32
+		{CF53752A-6806-4B56-BFD2-9638056734E8}.Debug|x64.ActiveCfg = Debug|x64
+		{CF53752A-6806-4B56-BFD2-9638056734E8}.Debug|x64.Build.0 = Debug|x64
+		{CF53752A-6806-4B56-BFD2-9638056734E8}.Release|Win32.ActiveCfg = Release|Win32
+		{CF53752A-6806-4B56-BFD2-9638056734E8}.Release|Win32.Build.0 = Release|Win32
+		{CF53752A-6806-4B56-BFD2-9638056734E8}.Release|x64.ActiveCfg = Release|x64
+		{CF53752A-6806-4B56-BFD2-9638056734E8}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+EndGlobal
