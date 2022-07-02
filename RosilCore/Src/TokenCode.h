@@ -63,6 +63,7 @@ enum TokenCode
     Case,
     Get,
     Set,
+    Return,
 
     // Type
     BoolType,

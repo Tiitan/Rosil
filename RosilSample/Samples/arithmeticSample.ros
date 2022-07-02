@@ -5,8 +5,10 @@ main():
     print(x)
     x = 1 + 2 * 3 / (1 + 1)
     print(x)
+    print(x - 1.2)
     
 // output:
 // 15
 // 0
 // 4
+// 2.8

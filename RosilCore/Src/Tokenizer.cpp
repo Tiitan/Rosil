@@ -17,6 +17,7 @@ static const std::unordered_map<std::string,TokenCode> wordTokenTable = {
     {"case", TokenCode::Case},
     {"get", TokenCode::Get},
     {"set", TokenCode::Set},
+    {"return", TokenCode::Return},
     
     {"bool", TokenCode::BoolType},
     {"int", TokenCode::IntType},
@@ -139,20 +140,20 @@ void Tokenizer::PushNextToken(char*& charCursor)
     // Check for a number (12, 18.05)
     if (CharIsNumber(*charCursor))
     {
-        TokenCode code = TokenCode::IntType;
+        TokenCode code = TokenCode::IntValue;
         int stringCharCount = 0;
         while (*(charCursor + stringCharCount) && CharIsNumber(*(charCursor + stringCharCount)))
         {
             ++stringCharCount;
             if (*(charCursor + stringCharCount) == '.')
             {
-                if (code == TokenCode::FloatType)
+                if (code == TokenCode::FloatValue)
                     _errors.emplace_back(0, "Invalid number (multiple '.').", _lineIndex);
-                code = TokenCode::FloatType;
+                code = TokenCode::FloatValue;
             }
         }
         
-        _tokens.emplace_back(TokenCode::Text, std::string(charCursor, stringCharCount), _lineIndex);
+        _tokens.emplace_back(code, std::string(charCursor, stringCharCount), _lineIndex);
 
         charCursor += stringCharCount;
         return;
