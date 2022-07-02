@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
     }
     
     std::ifstream fileStream(argv[1]);
-    auto tokenizer = Tokenizer();
+    auto tokenizer = RosilCore::Tokenizer();
     if (tokenizer.Run(fileStream))
     {
         for (auto const &i: tokenizer.GetTokens()) {

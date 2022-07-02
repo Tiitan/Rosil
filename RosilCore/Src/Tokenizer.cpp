@@ -1,6 +1,8 @@
 ﻿#include "Tokenizer.h"
 #include <sstream>
 
+using namespace RosilCore;
+
 static const std::unordered_map<std::string,TokenCode> wordTokenTable = {
     {"true", TokenCode::TrueValue},
     {"false", TokenCode::FalseValue},
@@ -80,7 +82,9 @@ static const std::unordered_map<char,TokenCode> charTokenTable = {
     {'}', TokenCode::CloseBrace},
 };
 
-Tokenizer::Tokenizer()
+Tokenizer::Tokenizer():
+    _lineIndex(0),
+    _lastLineOpenedContext(false)
 {
     
 }
@@ -258,6 +262,12 @@ bool Tokenizer::Run(std::istream& stream)
     }
     
     return _errors.empty();
+}
+
+bool RosilCore::Tokenizer::Run(std::string& string)
+{
+    std::istringstream stringStream = std::istringstream(string);
+    return Run(stringStream);
 }
 
 const std::list<Token>& Tokenizer::GetTokens()

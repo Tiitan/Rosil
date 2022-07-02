@@ -2,84 +2,87 @@
 
 #include <unordered_map>
 
-enum TokenCode
+namespace RosilCore
 {
-    Label,              // [aA-zZ]_[0-9]
-    Text,               // ""
-    IntValue,           // start with [0-9] 
-    FloatValue,         // start with [0-9] contains '.'
-    TrueValue,
-    FalseValue,
+    enum TokenCode
+    {
+        Label,              // [aA-zZ]_[0-9]
+        Text,               // ""
+        IntValue,           // start with [0-9] 
+        FloatValue,         // start with [0-9] contains '.'
+        TrueValue,
+        FalseValue,
 
-    // Arithmetic operator
-    Add,                // +
-    Sub,                // -
-    Divide,             // /
-    Multiply,           // *
-    Modulo,             // %
-    
-    // Boolean operator
-    And,                // &&
-    Or,                 // ||
-    Xor,                // ^
-    Inferior,           // <
-    Superior,           // >
-    InferiorOrEquals,   // <=
-    SuperiorOrEquals,   // >=
-    Equals,             // ==
-    NotEquals,          // !=
-    Invert,             // !
+        // Arithmetic operator
+        Add,                // +
+        Sub,                // -
+        Divide,             // /
+        Multiply,           // *
+        Modulo,             // %
 
-    // Assign    
-    Assign,             // =
-    AddAssign,          // +=
-    SubAssign,          // -=
-    DivAssign,          // /=
-    MultAssign,         // *=
-    ModAssign,          // %=
-    Increment,          // ++
-    Decrement,          // --
+        // Boolean operator
+        And,                // &&
+        Or,                 // ||
+        Xor,                // ^
+        Inferior,           // <
+        Superior,           // >
+        InferiorOrEquals,   // <=
+        SuperiorOrEquals,   // >=
+        Equals,             // ==
+        NotEquals,          // !=
+        Invert,             // !
 
-    // Separators
-    Accessor,           // .
-    ParameterSeparator, // ,
-    StatementSeparator, // ;
-    OpenContext,        // :
-    CloseContext,       // one for each removed tab on next line (or one for inlined context)
-    OpenParenthesis,    // (
-    CloseParenthesis,   // )
-    OpenBracket,        // {
-    CloseBracket,       // }
-    OpenBrace,          // [
-    CloseBrace,         // ]
+        // Assign    
+        Assign,             // =
+        AddAssign,          // +=
+        SubAssign,          // -=
+        DivAssign,          // /=
+        MultAssign,         // *=
+        ModAssign,          // %=
+        Increment,          // ++
+        Decrement,          // --
 
-    // Control
-    If,
-    Else,
-    ElseIf,             // Else + If
-    While,
-    For,
-    Switch,
-    Case,
-    Get,
-    Set,
-    Return,
+        // Separators
+        Accessor,           // .
+        ParameterSeparator, // ,
+        StatementSeparator, // ;
+        OpenContext,        // :
+        CloseContext,       // one for each removed tab on next line (or one for inlined context)
+        OpenParenthesis,    // (
+        CloseParenthesis,   // )
+        OpenBracket,        // {
+        CloseBracket,       // }
+        OpenBrace,          // [
+        CloseBrace,         // ]
 
-    // Type
-    BoolType,
-    IntType,
-    FloatType,
-    StringType,
-    ClassType,
-    StructType,
-    EnumType,
-    ListType,
-    DictType,
-    Import,
+        // Control
+        If,
+        Else,
+        ElseIf,             // Else + If
+        While,
+        For,
+        Switch,
+        Case,
+        Get,
+        Set,
+        Return,
 
-    // Access
-    Public,
-    Private,
-    Static,
-    Const,
-};
+        // Type
+        BoolType,
+        IntType,
+        FloatType,
+        StringType,
+        ClassType,
+        StructType,
+        EnumType,
+        ListType,
+        DictType,
+        Import,
+
+        // Access
+        Public,
+        Private,
+        Static,
+        Const,
+    };
+}
