@@ -1,0 +1,39 @@
+{
+    "name": "rosilvscode",
+    "displayName": "RosilVsCode",
+    "description": "Vs code extension for Rosil language",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.68.0"
+    },
+    "bugs": {
+        "url": "https://github.com/Tiitan/Rosil/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Tiitan/Rosil.git",
+        "directory": "RosilVsCode"
+    },
+    "categories": [
+        "Debuggers",
+        "Programming Languages",
+        "Linters"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "rosil",
+            "aliases": ["Rosil", "rosil"],
+            "extensions": [".ros"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "rosil",
+            "scopeName": "source.rosil",
+            "path": "./syntaxes/rosil.tmLanguage.json"
+        }],
+        "main": "./out/extension"
+    },
+    "_activationEvents": [
+        "onLanguage:rosil"
+    ]
+}
