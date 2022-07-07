@@ -6,7 +6,7 @@ using OmniSharp.Extensions.LanguageServer.Protocol.Models;
 
 namespace RosilLanguageServer;
 
-public class CompletionHandler: ICompletionHandler
+internal class CompletionHandler: ICompletionHandler
 {
     public async Task<CompletionList> Handle(CompletionParams request, CancellationToken cancellationToken)
     {

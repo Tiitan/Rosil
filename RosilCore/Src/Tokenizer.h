@@ -15,6 +15,8 @@ namespace RosilCore
         TokenCode code;
         std::string value;
         int line;
+        int startChar; // TODO fill value
+        int length; // doesn't always match value.length (ex: string token ignore "") // TODO fill value
 
         Token(const TokenCode code, std::string value, const int line) :
             code(code),
@@ -35,6 +37,8 @@ namespace RosilCore
         int code;
         std::string message;
         int line;
+        int startChar; // TODO fill value
+        int length; // TODO fill value
 
         Error(const int code, std::string message, const int line) :
             code(code),
@@ -97,11 +101,17 @@ namespace RosilCore
         const std::list<Error>& GetErrors();
 
         /**
-         * \brief split a file or a text into a list of string
+         * \brief split a rosil file into a list of string
          * \param stream open stream on a Rosil script
-         * \return success ? check errors if false
+         * \return success? check GetErrors if false
          */
         bool  Run(std::istream& stream);
+
+        /**
+         * \brief split a rosil text into a list of string
+         * \param string string of a Rosil script, call to Run(std::istream& stream) generate a double copy!
+         * \return success? check GetErrors if false
+         */
         bool  Run(std::string& string);
     };
 }

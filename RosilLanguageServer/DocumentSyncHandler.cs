@@ -10,7 +10,6 @@ using OmniSharp.Extensions.LanguageServer.Protocol.Models;
 using OmniSharp.Extensions.LanguageServer.Protocol.Server;
 using OmniSharp.Extensions.LanguageServer.Protocol.Server.Capabilities;
 using OmniSharp.Extensions.LanguageServer.Protocol.Window;
-using RosilClrWrapper;
 
 namespace RosilLanguageServer;
 
@@ -21,13 +20,12 @@ internal class DocumentSyncHandler: ITextDocumentSyncHandler
     private readonly ConcurrentDictionary<string, bool> _dirty = new();
     private readonly ConcurrentDictionary<string, string> _unchangedDocument = new();
 
-    private readonly Tokenizer _tokenizer;
-    
+    // TODO move tokenizer and lexer here to cache AST instead of script string 
+
     public DocumentSyncHandler(ILanguageServer server, DocumentCache cache)
     {
         _server = server;
         _documentCache = cache;
-        _tokenizer = new Tokenizer(); // TODO start tokenizing! 
     }
     
     // On document opened

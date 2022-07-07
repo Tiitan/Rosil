@@ -18,7 +18,7 @@ namespace RosilLanguageServer
                         .AddDefaultLoggingProvider()
                         .WithServices(ConfigureServices)
                         .WithHandler<DocumentSyncHandler>()
-                        .WithHandler<HighlightHandler>()
+                        .WithHandler<SemanticTokensHandler>()
                         .WithHandler<CompletionHandler>()
             );
             await server.WaitForExit;
